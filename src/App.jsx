@@ -14,6 +14,7 @@ function App() {
         setUsers(data)
       }catch(error){
         console.error("Failed to fetch users:",error);
+        alert("Failed to fetch users")
       }
     }
     fetchUsers();
