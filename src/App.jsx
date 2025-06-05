@@ -14,13 +14,13 @@ function App() {
         setUsers(data)
       }catch(error){
         console.error("Failed to fetch users:",error);
-        alert("Failed to fetch users")
+        alert("Failed to fetch data")
       }
     }
     fetchUsers();
   },[])
 
-  const totalPages=Math.ceil(users.length/usersPerPage);
+  const totalPages=Math.max(1,Math.ceil(users.length/usersPerPage));
   const startIndex=(currentPage-1)*usersPerPage;
   const currentUsers=users.slice(startIndex,startIndex+usersPerPage);
 
